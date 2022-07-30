@@ -1,0 +1,22 @@
+{
+  "name": "bad-bankmongoatlas",
+  "version": "1.0.0",
+  "description": "full stack bad bank capstone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kateverville/Bad-Bank.git"
+  },
+  "author": "katharine.verville@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kateverville/Bad-Bank/issues"
+  },
+  "homepage": "https://github.com/kateverville/Bad-Bank#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
