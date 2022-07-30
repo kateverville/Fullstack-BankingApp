@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 const url =
   "mongodb+srv://kateverville:uCBEGPZOh0MwpzTT@cluster0.vpok2le.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
-const dbName = "to-do-list";
+const dbName = "bb-project";
 let db;
 let collection;
 async function main() {
@@ -10,7 +10,7 @@ async function main() {
   await client.connect();
   console.log("Connected successfully to server");
   db = client.db(dbName);
-  collection = db.collection("tasks");
+  collection = db.collection("users");
   return "done.";
 }
 
