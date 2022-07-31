@@ -5,24 +5,17 @@
 
 
 
-var express = require('express');
-var app = express();
-var cors = require('cors');
-var dal = require('./dal.js');
+const express = require ('express');
+const app = express();
+const cors = require('cors');
+const dal = require('./dal.js');
+var port = process.env.PORT || 3000;
 
-
-
-// used to serve static files
+//used to serve static files from public directory
 app.use(express.static('public'));
 app.use(cors());
 
-
-// used to serve static files from public directory
-app.use(express.static('public'));
-
-app.use(cors());
-
-// create user account
+/// create user account
 app.post('/account/create', function (req, res) {
     console.log('request',req);
     // check if account exists
@@ -58,11 +51,11 @@ app.get('/account/login/:email/:password', function (req, res) {
                     res.send(user[0]);
                 }
                 else{
-                    res.send('Login failed: wrong password');
+                    res.send('Sorry wrong password');
                 }
             }
             else{
-                res.send('Login failed: user not found');
+                res.send('not found');
             }
     });
     
@@ -121,6 +114,10 @@ app.delete('/account/delete/:email/:password', function(req, res) {
             res.send(doc);
         })
 })
+
+var port = process.env.PORT || 3000;
+app.listen(port, () => console.log('Running on port: ' + port));
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, () => console.log('Running on port: ' + port));
