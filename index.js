@@ -118,6 +118,3 @@ app.delete('/account/delete/:email/:password', function(req, res) {
 var port = process.env.PORT || 3000;
 app.listen(port, () => console.log('Running on port: ' + port));
 
-
-var port = process.env.PORT || 3000;
-app.listen(port, () => console.log('Running on port: ' + port));
