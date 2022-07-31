@@ -1,3 +1,7 @@
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb+srv://admin:thirdtimesacharm@cluster0.fivdwwm.mongodb.net/?retryWrites=true&w=majority';
+let db = null;
+
 MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client)
    {console.log('connected successfully to db server');
     
@@ -17,6 +21,10 @@ async function main() {
 main()
   .then(console.log)
   .catch(console.error))
+
+  constdbName('bb-project')
+  db= client.db(dbName);
+  console.log(db);
 
 // create user account
 function create(name, email, password){
