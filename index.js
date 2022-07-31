@@ -9,7 +9,7 @@ const express = require ('express');
 const app = express();
 const cors = require('cors');
 const dal = require('./dal.js');
-var port = process.env.PORT || 3000;
+//var port = process.env.PORT || 3000;
 
 //used to serve static files from public directory
 app.use(express.static('public'));
@@ -115,6 +115,5 @@ app.delete('/account/delete/:email/:password', function(req, res) {
         })
 })
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 app.listen(port, () => console.log('Running on port: ' + port));
-

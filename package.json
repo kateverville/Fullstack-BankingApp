@@ -1,5 +1,5 @@
 {
-  "name": "kate-vervillefullstackbankingapplication",
+  "name": "bad-bank-mongo-atlas",
   "version": "1.0.0",
   "description": "full stack bank",
   "main": "index.js",
@@ -15,5 +15,7 @@
     "express": "^4.18.1",
     "mongodb": "^4.8.1",
     "react-bootstrap": "^2.4.0"
-  }
+  },
+
+"proxy": "http://localhost:3001"
 }

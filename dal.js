@@ -1,8 +1,8 @@
-import { MongoClient } from "mongodb";
-const url =
-  "mongodb+srv://kateverville:uCBEGPZOh0MwpzTT@cluster0.vpok2le.mongodb.net/?retryWrites=true&w=majority";
+MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client)
+   {console.log('connected successfully to db server');
+    
 const client = new MongoClient(url);
-const dbName = "bb-project";
+const dbName = 'bb-project';
 let db;
 let collection;
 async function main() {
@@ -12,12 +12,11 @@ async function main() {
   db = client.db(dbName);
   collection = db.collection("users");
   return "done.";
-}
+}},
 
 main()
   .then(console.log)
-  .catch(console.error);
-
+  .catch(console.error))
 
 // create user account
 function create(name, email, password){
