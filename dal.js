@@ -1,30 +1,14 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb+srv://admin:thirdtimesacharm@cluster0.fivdwwm.mongodb.net/?retryWrites=true&w=majority';
-let db = null;
+const url         = 'mongodb://localhost:27017';
+let db            = null;
+ 
+// connect to mongo
+MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
+    console.log("Connected successfully to db server");
 
-MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client)
-   {console.log('connected successfully to db server');
-    
-const client = new MongoClient(url);
-const dbName = 'bb-project';
-let db;
-let collection;
-async function main() {
-  // Use connect method to connect to the server
-  await client.connect();
-  console.log("Connected successfully to server");
-  db = client.db(dbName);
-  collection = db.collection("users");
-  return "done.";
-}},
-
-main()
-  .then(console.log)
-  .catch(console.error))
-
-  constdbName('bb-project')
-  db= client.db(dbName);
-  console.log(db);
+    // connect to myproject database
+    db = client.db('myproject');
+});
 
 // create user account
 function create(name, email, password){
