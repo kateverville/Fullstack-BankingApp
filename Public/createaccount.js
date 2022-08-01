@@ -4,7 +4,7 @@ function CreateAccount(){
   const [name, setName]         = React.useState('');
   const [email, setEmail]       = React.useState('');
   const [password, setPassword] = React.useState('');
-  const ctx = React.useContext(UserContext);  
+  //const ctx = React.useContext(UserContext);  
 
   function validate(field, label){
       if (!field) {
@@ -26,7 +26,14 @@ function CreateAccount(){
     if (!validate(name,     'name'))     return;
     if (!validate(email,    'email'))    return;
     if (!validate(password, 'password')) return;
-    ctx.users.push({name,email,password,balance:100});
+
+      //create user in MongoDB
+      const url = `/account/create/${name}/${email}/${password}`;
+      (async () => {
+        var res  = await fetch(url);
+        var data = await res.json();    
+        console.log(data);        
+      })();
     setShow(false);
   }    
 
