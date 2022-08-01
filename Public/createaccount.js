@@ -28,14 +28,18 @@ function CreateAccount(){
     if (!validate(password, 'password')) return;
 
       //create user in MongoDB
-      const url = `/account/create/${name}/${email}/${password}`;
+      const url = `/createaccount/${name}/${email}/${password}`;
       (async () => {
         var res  = await fetch(url);
-        var data = await res.json();    
-        console.log(data);        
+        var data = await res.text();    
+    
       })();
     setShow(false);
   }    
+
+  function newFunction(data) {
+    setData(JSON.stringify(data));
+  }
 
   function clearForm(){
     setName('');
@@ -67,5 +71,4 @@ function CreateAccount(){
               </>
             )}
     />
-  )
-            }
+  )}

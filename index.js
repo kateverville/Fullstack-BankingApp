@@ -15,30 +15,29 @@ const dal = require('./dal.js');
 app.use(express.static('public'));
 app.use(cors());
 
-/// create user account
-app.post('/account/create', function (req, res) {
+// create user account
+app.get('/createaccount/:name/:email/:password', function (req, res) {
     console.log('request',req);
     // check if account exists
-    dal.find(req.body.email).
-        then((users) => {
-
-            // if user exists, return error message
-            if(users.length > 0){
-                console.log('User already in exists');
-                res.send('User already in exists');    
-            }
-            else{
-                // else create user
-                dal.create(req.body.accountNumber, req.body.name,req.body.email,req.body.password, req.body.isAdmin).
-                    then((user) => {
-                        console.log(user);
-                        res.send(user);            
-                    });            
-            }
-
-        });
+    dal.find(req.params.email).
+    then((users) => {
+    
+    // if user exists, return error message
+    if(users.length > 0){
+    console.log('User already in exists');
+    res.send('User already in exists'); 
+    }
+    else{
+    // else create user
+    dal.create(req.params.name,req.params.email,req.params.password).
+    then((user) => {
+    console.log(user);
+    res.send(user); 
+    }); 
+    }
+    
 });
-
+});
 // login user 
 app.get('/account/login/:email/:password', function (req, res) {
 
