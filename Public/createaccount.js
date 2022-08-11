@@ -4,8 +4,20 @@ function CreateAccount(){
   const [name, setName]         = React.useState('');
   const [email, setEmail]       = React.useState('');
   const [password, setPassword] = React.useState('');
-  //const ctx = React.useContext(UserContext);  
+  const ctx = React.useContext(UserContext);  
 
+  //fetch from api
+  function handle(){
+    console.log(name,email,password);
+    const url = `/account/create/${name}/${email}/${password}`;
+    (async () => {
+        var res  = await fetch(url);
+        var data = await res.json();    
+        console.log(data);        
+    })();
+    props.setShow(false);
+  }   
+  
   function validate(field, label){
       if (!field) {
         setStatus('Missing field: ' + label);
@@ -30,8 +42,8 @@ function CreateAccount(){
       //create user in MongoDB
       const url = `/createaccount/${name}/${email}/${password}`;
       (async () => {
-        var res  = await fetch(url);
-        var data = await res.text();    
+        const res  = await fetch(url);
+        const data = await res.text();    
     
       })();
     setShow(false);

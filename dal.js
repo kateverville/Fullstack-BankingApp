@@ -53,7 +53,7 @@ function findOne(email){
 }
 
 // update - deposit/withdraw amount
-function update(email, amount){
+function update(email, amount, balance){
     return new Promise((resolve, reject) => {    
         const customers = db
             .collection('users')            
