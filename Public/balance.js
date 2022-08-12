@@ -46,7 +46,10 @@ function Balance() {
 
     {!loaded ? <div>{spinner}</div> : (
       <>
-   <div className="hi-msg">Hi, {ctx.user}</div>  <div></div>
+   <div className="hi-msg">&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello {ctx.user}</div>  <div></div>
 
     
       <Card

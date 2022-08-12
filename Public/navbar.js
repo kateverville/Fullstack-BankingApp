@@ -1,4 +1,5 @@
 function NavBar(){
+  const ctx = React.useContext(UserContext);
   return(
     <>
 

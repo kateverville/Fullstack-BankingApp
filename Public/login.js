@@ -9,7 +9,10 @@ function Login() {
 	
 	return (
 	  <>
-	  {loaded? <div className="hi-msg">Welcome, {user}</div> : <div></div>}
+	  {loaded? <div className="hi-msg">&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome {user}</div> : <div></div>}
 	  
 	  <div className="login-card">
 	  <Card
@@ -139,6 +142,18 @@ function Login() {
 			className="btn btn-info"
 			onClick={() => props.setShow(true)}
 			>Check Balance</button>
+			
+		</a>
+		<br />
+		<br />
+		<br />
+		<a href="#/login/">
+			<button
+          	type="submit"
+          	className="btn btn-info"
+          	onClick={() => {props.setShow(true); props.setStatus('');}}
+        	>Log Out</button>
+		
 					 
 		  </a>
 

@@ -24,7 +24,11 @@ function Deposit() {
   
   return (
     <>
-    <div className="hi-msg">Hi, {ctx.user}</div>  <div></div>
+
+    <div class="align-items-end" className="hi-msg">&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello {ctx.user}</div>  <div></div>
     
     <Card
       txtcolor="white"

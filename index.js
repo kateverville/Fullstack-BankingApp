@@ -54,7 +54,7 @@ app.get('/account/login/:email/:password', function (req, res) {
                 }
             }
             else{
-                res.send('not found');
+                res.send('Not found');
             }
     });
     
